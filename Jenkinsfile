@@ -27,7 +27,7 @@ pipeline
         {
             when
             {
-                expressions { params.Job == Test }
+                expressions { params.Job == "Test" }
             }
             steps
             {
