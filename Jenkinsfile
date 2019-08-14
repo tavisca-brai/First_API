@@ -11,7 +11,7 @@ pipeline
     }
     stages
     {
-        stage(Build)
+        stage('Build')
         {
             steps
             {
@@ -19,7 +19,7 @@ pipeline
                 dotnet build ${SOLUTION_FILE_PATH} -p:Configuration=release -v:n'''
             }
         }
-        stage(Test)
+        stage('Test')
         {
             when
             {
