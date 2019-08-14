@@ -12,7 +12,7 @@ namespace First_API_Test
         {
             HelloController valuesController = new HelloController();
             string result = valuesController.Get("Hello");
-            result.Should().Be("Hi");
+            result.Should().Be("Hii");
         }
 
         [Fact]
