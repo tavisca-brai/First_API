@@ -30,5 +30,12 @@ pipeline
                 sh 'dotnet test ${TEST_FILE_PATH}'
             }
         }
+        stage('Pubish')
+        {
+            steps
+            {
+                sh 'dotnet publish --framework netcoreapp2.1 --configuration Release -o bin\Release\PublishOutput'
+            }
+        }
     }
 }
