@@ -51,7 +51,7 @@ pipeline
         {
             steps
             {
-                powershell(script: 'compress-archive DemoWebApp/artifacts publish.zip -Update')
+                powershell(script: 'compress-archive First_API/artifacts publish.zip -Update')
                 archiveArtifacts artifacts: 'publish.zip'    
             }
         }
