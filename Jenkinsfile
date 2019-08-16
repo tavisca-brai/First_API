@@ -32,7 +32,7 @@ pipeline
         {
             when
             {
-                expression { params.JOB == 'Test'}
+                expression { params.Job == 'Test'}
             }
             
             steps 
