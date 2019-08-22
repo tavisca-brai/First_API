@@ -1,4 +1,3 @@
-
 pipeline
 {
     agent any
@@ -33,6 +32,7 @@ pipeline
             steps
             {    
                 powershell(script: "echo '*********Starting Restore and Build***************'")
+		powershell(script: 'dotnet C:/sonar/SonarScanner.MSBuild.dll begin /k:"api" /d:sonar.host.url="http://localhost:9000" /d:sonar.login="f68m5cca1ad53a8ca410fc75bh39n12685b39b6a"'
                 powershell(script: '$env:restoreCommand')
                 powershell(script: '$env:buildCommand')
                 powershell(script: "echo '***************Recovery Finish********************'")
@@ -54,6 +54,7 @@ pipeline
         {
             steps 
             {
+		powershell(script: 'dotnet c:/sonar/SonarScanner.MSBuild.dll end /d:sonar.login="f68m5cca1ad53a8ca410fc75bh39n12685b39b6a"')
                 powershell(script: "dotnet publish ${env.APPLICATION_NAME} -c Release -o ${env.artifactsDirectory} --no-restore")
             }
         }
